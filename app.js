@@ -164,6 +164,9 @@ gith({
   execFile('/var/www/hook2.sh', function(error, stdout, stderr) {
     // Log success in some manner
     console.log( 'exec complete' );
+    if (error) {
+      console.log(error);
+    }
   });
 });
 
