@@ -155,6 +155,7 @@ var gith = require('gith').create( 9001 );
 // Import execFile, to run our bash script
 var execFile = require('child_process').execFile;
 
+console.log("Begin gith");
 gith({
   repo: 'Jarvl/ENG2089-Project'
 }).on( 'file:all', function( payload ) {
