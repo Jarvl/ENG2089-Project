@@ -161,7 +161,7 @@ gith({
 }).on( 'file:all', function( payload ) {
   console.log("Post received");
   // Exec a shell script
-  execFile('/var/www/hook.sh', function(error, stdout, stderr) {
+  execFile('/var/www/hook2.sh', function(error, stdout, stderr) {
     // Log success in some manner
     console.log( 'exec complete' );
   });
