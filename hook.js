@@ -7,12 +7,12 @@ var gith = require('gith').create( 9001 );
 var execFile = require('child_process').execFile;
 
 gith({
-    repo: 'fideloper/example'
+    repo: 'Jarvl/ENG2089-Project'
 }).on( 'all', function( payload ) {
     if( payload.branch === 'master' )
     {
         // Exec a shell script
-        execFile('/path/to/hook.sh', function(error, stdout, stderr) {
+        execFile('/var/www/hook.sh', function(error, stdout, stderr) {
             // Log success in some manner
             console.log( 'exec complete' );
         });
