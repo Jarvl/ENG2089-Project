@@ -146,10 +146,9 @@ var options = {
     }
   }
 };
-*/
 
 app.use('/webhook', require('express-github-hook')(options));
-
+*/
 
 /**
  * Main routes.
