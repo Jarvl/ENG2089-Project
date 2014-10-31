@@ -158,6 +158,7 @@ var execFile = require('child_process').execFile;
 gith({
   repo: 'Jarvl/ENG2089-Project'
 }).on( 'file:all', function( payload ) {
+  console.log("Post received");
   // Exec a shell script
   execFile('/var/www/hook.sh', function(error, stdout, stderr) {
     // Log success in some manner
