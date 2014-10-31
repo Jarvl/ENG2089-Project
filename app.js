@@ -107,6 +107,49 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 /**
+ * Github Webhook
+ */
+
+var options = {
+  secret: 'EnglishProject',
+
+  logger: {
+    log: function (msg)
+    {
+      console.log('GitHubHook : ' + msg);
+    },
+    error: function (msg)
+    {
+      console.error('GitHubHook : ' + msg);
+      events.send('error', {route: 'githubhook', error: msg});
+    }
+  },
+
+  treatRequest: function (event, repo, ref, data)
+  {
+    console.log('WEBHOOK ' + event + ' on repository ' + repo + ', action: ' + data.action);
+
+    switch (event)
+    {
+      case 'issues':
+        processIssue(repo, ref, data);
+        break;
+
+      case 'issue_comment':
+        processIssue(repo, ref, data);
+        break;
+
+      case 'public':
+        processPublic(repo, ref, data);
+        break;
+    }
+  }
+};
+
+app.use('/webhook', require('express-github-hook')(options));
+
+
+/**
  * Main routes.
  */
 
