@@ -21,6 +21,7 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
+var gitlab = require('gitlab-webhook');
 /**
  * Controllers (route handlers).
  */
@@ -109,7 +110,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 /**
  * Github Webhook
  */
-
+/*
 var options = {
   secret: 'EnglishProject',
 
@@ -145,6 +146,14 @@ var options = {
     }
   }
 };
+*/
+
+app.gitlab('/webhook', {
+  exec: 'git pull',
+  token: 'EnglishProject',
+  branches: '*'
+});
+
 
 app.use('/webhook', require('express-github-hook')(options));
 
