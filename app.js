@@ -157,7 +157,7 @@ var execFile = require('child_process').execFile;
 
 gith({
   repo: 'Jarvl/ENG2089-Project'
-}).on( 'all', function( payload ) {
+}).on( 'file:all', function( payload ) {
   if( payload.branch === 'master' )
   {
     // Exec a shell script
