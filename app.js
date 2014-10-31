@@ -110,7 +110,7 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 /**
  * Github Webhook
  */
-/*
+
 var options = {
   secret: 'EnglishProject',
 
@@ -146,13 +146,6 @@ var options = {
     }
   }
 };
-*/
-
-app.webhook('/webhook', {
-  exec: 'git pull',
-  token: 'EnglishProject',
-  branches: '*'
-});
 
 
 app.use('/webhook', require('express-github-hook')(options));
