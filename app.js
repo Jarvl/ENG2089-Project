@@ -158,7 +158,8 @@ var execFile = require('child_process').execFile;
 console.log("Begin gith");
 gith({
   repo: 'Jarvl/ENG2089-Project'
-}).on( 'all', function( payload ) {
+}).payload('application/json')
+  .on( 'all', function( payload ) {
   console.log("Post received");
   // Exec a shell script
   execFile('/var/www/hook2.sh', function(error, stdout, stderr) {
