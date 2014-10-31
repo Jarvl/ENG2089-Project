@@ -148,7 +148,7 @@ var options = {
 };
 */
 
-app.gitlab('/webhook', {
+app.webhook('/webhook', {
   exec: 'git pull',
   token: 'EnglishProject',
   branches: '*'
