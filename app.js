@@ -11,6 +11,7 @@ var logger = require('morgan');
 var errorHandler = require('errorhandler');
 var csrf = require('lusca').csrf();
 var methodOverride = require('method-override');
+var favicon = require('serve-favicon');
 
 var _ = require('lodash');
 var MongoStore = require('connect-mongo')(session);
@@ -34,6 +35,7 @@ var contactController = require('./controllers/contact');
 var deathsController = require('./controllers/deaths');
 var ruggedController = require('./controllers/rugged');
 var theftorhomageController = require('./controllers/theftorhomage');
+var top10versesController = require('./controllers/top10verses');
 
 /**
  * API keys and Passport configuration.
@@ -79,6 +81,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressValidator());
+// Favicon middleware
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(session({
@@ -183,6 +187,7 @@ app.get('/', homeController.index);
 app.get('/deaths', deathsController.index);
 app.get('/rugged', ruggedController.index);
 app.get('/theftorhomage', theftorhomageController.index);
+app.get('/top10verses', top10versesController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
