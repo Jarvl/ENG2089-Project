@@ -31,6 +31,8 @@ var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
 
+var deathsController = require('./controllers/deaths');
+
 /**
  * API keys and Passport configuration.
  */
@@ -177,6 +179,7 @@ gith({
  */
 
 app.get('/', homeController.index);
+app.get('/deaths', deathsController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
