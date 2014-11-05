@@ -14,11 +14,12 @@ html
     .container
       include partials/flash
       if intro
-        .jumbotron.jumbotronInnerShadow
+        .jumbotron.jumbotron-inner-shadow
           h1 Introduction
           p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
         hr
-      block content
+      .drop-shadow
+        block content
 
     include partials/footer
 
