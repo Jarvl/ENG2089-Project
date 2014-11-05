@@ -8,6 +8,6 @@
 
 exports.index = function(req, res) {
     res.render('rugged', {
-        title: "It Ain't always Rugged"
+        title: "It Ain't Always Rugged"
     });
 };
