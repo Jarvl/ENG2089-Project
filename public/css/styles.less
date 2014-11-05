@@ -81,7 +81,7 @@ footer {
   border: 2px solid #454545;
   border-radius: 6px;
 }
-
+/*
 blockquote {
   background: #f9f9f9;
   border-left: 10px solid #ccc;
@@ -97,7 +97,7 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
-/*
+
 blockquote:after {
   color: #ccc;
   content: close-quote;
@@ -106,7 +106,41 @@ blockquote:after {
   margin-left: 0.25em;
   vertical-align: -0.4em;
 }
-*/
+
 blockquote p {
   display: inline;
+}
+*/
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  width: 500px;
+  margin: 0.25em 0;
+  padding: 0.25em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+}
+
+blockquote:before {
+  display: block;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "\2014 \2009";
 }
