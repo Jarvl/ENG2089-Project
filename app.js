@@ -166,6 +166,7 @@ var gith = require('gith').create( 9001 );
 var execFile = require('child_process').execFile;
 */
 
+/*
 console.log("Begin gith");
 gith({
   repo: 'Jarvl/ENG2089-Project'
@@ -180,7 +181,7 @@ gith({
     }
   });
 });
-
+*/
 
 /**
  * Main routes.
