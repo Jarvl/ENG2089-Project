@@ -22,7 +22,7 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
-var gitlab = require('gitlab-webhook');
+// var gitlab = require('gitlab-webhook');
 /**
  * Controllers (route handlers).
  */
@@ -31,10 +31,12 @@ var homeController = require('./controllers/home');
 var userController = require('./controllers/user');
 var apiController = require('./controllers/api');
 var contactController = require('./controllers/contact');
+var webhookController = require('./controllers/webhook');
 
 var deathsController = require('./controllers/deaths');
 var ruggedController = require('./controllers/rugged');
 var theftorhomageController = require('./controllers/theftorhomage');
+
 
 /**
  * API keys and Passport configuration.
@@ -157,10 +159,12 @@ var options = {
 app.use('/webhook', require('express-github-hook')(options));
 */
 
+/*
 // Listen on port 9001
 var gith = require('gith').create( 9001 );
 // Import execFile, to run our bash script
 var execFile = require('child_process').execFile;
+*/
 
 console.log("Begin gith");
 gith({
@@ -202,6 +206,9 @@ app.post('/account/profile', passportConf.isAuthenticated, userController.postUp
 app.post('/account/password', passportConf.isAuthenticated, userController.postUpdatePassword);
 app.post('/account/delete', passportConf.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConf.isAuthenticated, userController.getOauthUnlink);
+
+app.post('/webhook', webhookController.webhook);
+app.get('/webhook', webhookController.index);
 
 /**
  * API examples routes.
