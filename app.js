@@ -22,7 +22,6 @@ var passport = require('passport');
 var expressValidator = require('express-validator');
 var connectAssets = require('connect-assets');
 
-// var gitlab = require('gitlab-webhook');
 /**
  * Controllers (route handlers).
  */
@@ -116,72 +115,6 @@ app.use(function(req, res, next) {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
-/**
- * Github Webhook
- */
-/*
-var options = {
-  secret: 'EnglishProject',
-
-  logger: {
-    log: function (msg)
-    {
-      console.log('GitHubHook : ' + msg);
-    },
-    error: function (msg)
-    {
-      console.error('GitHubHook : ' + msg);
-      events.send('error', {route: 'githubhook', error: msg});
-    }
-  },
-
-  treatRequest: function (event, repo, ref, data)
-  {
-    console.log('WEBHOOK ' + event + ' on repository ' + repo + ', action: ' + data.action);
-
-    switch (event)
-    {
-      case 'issues':
-        processIssue(repo, ref, data);
-        break;
-
-      case 'issue_comment':
-        processIssue(repo, ref, data);
-        break;
-
-      case 'public':
-        processPublic(repo, ref, data);
-        break;
-    }
-  }
-};
-
-app.use('/webhook', require('express-github-hook')(options));
-*/
-
-/*
-// Listen on port 9001
-var gith = require('gith').create( 9001 );
-// Import execFile, to run our bash script
-var execFile = require('child_process').execFile;
-*/
-
-/*
-console.log("Begin gith");
-gith({
-  repo: 'Jarvl/ENG2089-Project'
-}).on( 'all', function( payload ) {
-  console.log("Post received");
-  // Exec a shell script
-  execFile('/var/www/hook2.sh', function(error, stdout, stderr) {
-    // Log success in some manner
-    console.log( 'exec complete' );
-    if (error) {
-      console.log(error);
-    }
-  });
-});
-*/
 
 /**
  * Main routes.
