@@ -22,9 +22,10 @@ exports.webhook = function(req, res) {
 
     // Define secret (from Github) for SHA1 HMAC Hex Digest
     var secret = 'Every. Single. Night.';
+    var data = JSON.stringify(jsonPayload);
 
     // Compute the hash using the secret as the key, and the payload as the data to hash
-    var computedHash = crypto.createHmac('sha1', secret).update(jsonPayload).digest('hex');
+    var computedHash = crypto.createHmac('sha1', secret).update(data).digest('hex');
     console.log(computedHash);
 
     res.status(200).send(jsonPayload);
