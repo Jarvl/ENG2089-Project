@@ -2,8 +2,7 @@
  * Created by Andrew on 11/6/2014.
  */
 
-var bodyParser = require('body-parser');
-
+var sha1 = require('sha1');
 
 /**
  * POST /webhook
@@ -13,7 +12,6 @@ var bodyParser = require('body-parser');
 
 exports.webhook = function(req, res) {
     var jsonPayload = req.body;
-    console.log(jsonPayload);
     res.status(200).send(jsonPayload);
 };
 
