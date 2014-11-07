@@ -37,6 +37,7 @@ exports.webhook = function(req, res) {
             execFile('/var/www/gitpull.sh', [], {}, function(error, stdout, stderr){
                 console.log("shell script executed");
                 console.log(stdout);
+                console.log(stderr);
                 res.status(200).send("Local repository updated!");
             });
         }
