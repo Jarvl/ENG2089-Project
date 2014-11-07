@@ -34,7 +34,8 @@ exports.webhook = function(req, res) {
 
         // If the secrets matched and the push was to the master branch, update the local repo and send a '200 OK' response
         if (jsonPayload.ref == "refs/heads/master") {
-            execFile('/var/www/gitpull.sh', function(error, stdout, stderr){
+            execFile('/var/www/gitpull.sh', [], {}, function(error, stdout, stderr){
+                console.log("shell script executed");
                 console.log(stdout);
                 res.status(200).send("Local repository updated!");
             });
