@@ -11,8 +11,12 @@ var sha1 = require('sha1');
 
 
 exports.webhook = function(req, res) {
+    githubSecretHash = req.header('X-Hub-Signature');
+    console.log(githubSecretHash);
+
     var jsonPayload = req.body;
     console.log(jsonPayload.ref);
+
     res.status(200).send(jsonPayload);
 };
 
