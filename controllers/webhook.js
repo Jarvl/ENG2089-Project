@@ -4,6 +4,7 @@
 
 var crypto = require('crypto');
 var execFile = require('child_process').execFile;
+var exec = require('child_process').exec;
 
 
 /**
@@ -34,10 +35,9 @@ exports.webhook = function(req, res) {
 
         // If the secrets matched and the push was to the master branch, update the local repo and send a '200 OK' response
         if (jsonPayload.ref == "refs/heads/master") {
-            execFile('/var/www/gitpull.sh', [], {}, function(error, stdout, stderr){
+            exec('cd /var/www && git pull', function(error, stdout, stderr){
                 console.log("shell script executed");
                 console.log(stdout);
-                console.log(stderr);
                 res.status(200).send("Local repository updated!");
             });
         }
