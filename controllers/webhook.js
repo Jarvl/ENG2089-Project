@@ -12,7 +12,8 @@ var bodyParser = require('body-parser');
 
 
 exports.webhook = function(req, res) {
-    console.log(req.body);
+    var jsonPayload = req.body;
+    console.log(jsonPayload);
 };
 
 /**

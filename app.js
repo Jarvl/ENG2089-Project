@@ -64,7 +64,7 @@ mongoose.connection.on('error', function() {
  * CSRF whitelist.
  */
 
-var csrfExclude = ['/url1', '/url2'];
+var csrfExclude = ['/webhook'];
 
 /**
  * Express configuration.
