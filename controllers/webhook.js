@@ -15,11 +15,11 @@ var sh = require('execSync');
 
 exports.webhook = function(req, res) {
 
-    // JSON payload from Github
+    // JSON payload sent from Github
     var jsonPayload= req.body;
 
     // Read the signature header that contains the sha1 hash from Github
-    reqGithubHash = req.header('X-Hub-Signature');
+    var reqGithubHash = req.header('X-Hub-Signature');
 
     // Define secret (specified on Github) and stringify the payload to use for the SHA1 HMAC Hex Digest function
     var secret = 'Every. Single. Night.';
