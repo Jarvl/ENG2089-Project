@@ -11,6 +11,7 @@ var sh = require('execSync');
 /**
  * POST /webhook
  * Update the repo
+ * THIS SHOULD ONLY BE USED IN A DEVELOPMENT ENVIRONMENT
  */
 
 exports.webhook = function(req, res) {
