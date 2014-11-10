@@ -37,7 +37,7 @@ exports.webhook = function(req, res) {
         // If the secrets matched and the push was to the master branch, update the local repo and send a '200 OK' response
         if (jsonPayload.ref == "refs/heads/master") {
             console.log("About to execute command");
-            var gitPull = executeSync('cd /var/www && git pull');
+            executeSync('cd /var/www && git pull');
             console.log(gitPull);
             console.log("shell script executed");
             res.status(200).send("Local repository updated!");
