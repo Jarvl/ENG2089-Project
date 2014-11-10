@@ -56,10 +56,11 @@ exports.webhook = function(req, res) {
         secret = data;
     });
 
-    var data = JSON.stringify(jsonPayload);
+    //stringify json payload for hashing
+    var jsonPayloadString = JSON.stringify(jsonPayload);
 
     // Compute the hash using the secret as the key, and the payload as the data to hash
-    var computedHash = crypto.createHmac('sha1', secret).update(data).digest('hex');
+    var computedHash = crypto.createHmac('sha1', secret).update(jsonPayloadString).digest('hex');
     computedHash = "sha1=" + computedHash;
 
     // Compare the two hashes to see if the secrets matched
