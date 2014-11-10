@@ -45,21 +45,15 @@ fs = require('fs');
 
 exports.webhook = function(req, res) {
 
-    // JSON payload sent from Github
+    // Store JSON payload sent from Github and stringify it to use for the SHA1 HMAC Hex Digest function
     var jsonPayload= req.body;
+    var jsonPayloadString = JSON.stringify(jsonPayload);
 
     // Read the signature header that contains the sha1 hash from Github
     var reqGithubHash = req.header('X-Hub-Signature');
 
-    // Define secret (specified on Github) and stringify the payload to use for the SHA1 HMAC Hex Digest function
-    var secret = "";
-
     // Read the file with the secret. The relative directory for fs.readFileSync is the process.cwd() (The directory where the server file was launched)
     var secret = fs.readFileSync('secret.txt', 'utf-8');
-    console.log(secret);
-
-    //stringify json payload for hashing
-    var jsonPayloadString = JSON.stringify(jsonPayload);
 
     // Compute the hash using the secret as the key, and the payload as the data to hash
     var computedHash = crypto.createHmac('sha1', secret).update(jsonPayloadString).digest('hex');
