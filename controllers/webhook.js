@@ -53,7 +53,7 @@ exports.webhook = function(req, res) {
     fs.readFile('secret.txt', 'utf-8', function (err, data) {
         if (err) throw err;
         console.log(data);
-        secret = data.substr(0, data.length - 1);
+        secret = data;
         console.log(secret);
     });
 
@@ -99,5 +99,13 @@ exports.webhook = function(req, res) {
  */
 
 exports.index = function (req, res) {
-    res.status(200).send("This URL is used for webhooks and webhooks only!");
+    var secret='';
+    fs.readFile('secret.txt', 'utf-8', function (err, data) {
+        if (err) throw err;
+        console.log(data);
+        secret = data;
+        console.log(secret);
+    });
+
+    res.status(200).send(secret + "text after");
 };
