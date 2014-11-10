@@ -11,8 +11,11 @@ fs = require('fs');
 
 /**
  * POST /webhook
- * Remember to define the post request in app.js
- * Remember to define bodyparser middleware in app.js
+ * Remember to define your routes for GET and POST for this webhook in your app.js file, for example:
+ * var webhookController = require('./controllers/webhook');
+ * app.post('/webhook', webhookController.webhook);
+ * app.get('/webhook', webhookController.index);
+ *
  *
  * Purpose of this code: Update the repo when a json payload is posted to this page
  * defining a push to the master branch.
