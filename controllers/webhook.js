@@ -54,6 +54,7 @@ exports.webhook = function(req, res) {
         if (err) throw err;
         console.log(data);
         secret = data.substr(0, data.length - 1);
+        console.log(secret);
     });
 
     //stringify json payload for hashing
