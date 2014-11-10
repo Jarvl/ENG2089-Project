@@ -47,10 +47,10 @@ exports.webhook = function(req, res) {
     var reqGithubHash = req.header('X-Hub-Signature');
 
     // Define secret (specified on Github) and stringify the payload to use for the SHA1 HMAC Hex Digest function
-    var secret = '';
+    var secret = "";
 
     // Read the file with the secret. The relative directory for fs.readFile is the process.cwd() (The directory where the server file was launched)
-    fs.readFile('secret.txt', {encoding: 'utf-8'}, function (err, data) {
+    fs.readFile('secret.txt', 'utf-8', function (err, data) {
         if (err) throw err;
         console.log(data);
         secret = data;
