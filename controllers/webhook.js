@@ -15,7 +15,7 @@ fs = require('fs');
  * Remember to define bodyparser middleware in app.js
  *
  * Purpose of this code: Update the repo when a json payload is posted to this page
- * defining a push to the master branch
+ * defining a push to the master branch.
  *
  * HUGE NOTE: The URL of your webhook NEEDS to be CSRF whitelisted in app.js, or the
  * webhook will not work at all.
@@ -34,6 +34,11 @@ fs = require('fs');
  * is available on Github, anyone and everyone can see your secret, which is a no-no.
  * For my webhook, I keep the secret in a text file and add that file to my .gitignore
  * until I find a better way to store it.
+ *
+ * Protip for storing your secret in, say, a .txt file: Making a file via command line
+ * will for some reason add an extra return to the file, which will cause the two hashes
+ * to be different. I recommend using a text editor to make the file, saving it, then
+ * uploading it to your server.
  *
  * THIS SHOULD ONLY BE USED IN A DEVELOPMENT ENVIRONMENT
  */
