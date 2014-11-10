@@ -105,7 +105,6 @@ exports.index = function (req, res) {
         console.log(data);
         secret = data;
         console.log(secret);
+        res.status(200).send(secret + "text after");
     });
-
-    res.status(200).send(secret + "text after");
 };
