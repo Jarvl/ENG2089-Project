@@ -1,5 +1,5 @@
 /**
- * Created by Andrew on 11/6/2014.
+ * Created by Andrew Jarvis on 11/6/2014.
  */
 
 // Library for computing the sha1 hash
@@ -10,7 +10,8 @@ var sh = require('execSync');
 
 /**
  * POST /webhook
- * Update the repo
+ * Remember to define the post request in app.js
+ * Purpose: Update the repo
  * THIS SHOULD ONLY BE USED IN A DEVELOPMENT ENVIRONMENT
  */
 
@@ -57,7 +58,7 @@ exports.webhook = function(req, res) {
 
 /**
  * GET /webhook
- * This is not a GET URL
+ * Remember to define the GET request in app.js
  * If someone tries to GET this page,
  * Just tell them there's nothing here for them
  */
