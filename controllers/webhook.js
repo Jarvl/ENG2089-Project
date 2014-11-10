@@ -48,7 +48,7 @@ exports.webhook = function(req, res) {
 
     // Define secret (specified on Github) and stringify the payload to use for the SHA1 HMAC Hex Digest function
     var secret = '';
-    fs.readFile('../secret.txt', function (err, data) {
+    fs.readFile('secret.txt', function (err, data) {
         if (err) throw err;
         console.log(data);
         secret = data;
