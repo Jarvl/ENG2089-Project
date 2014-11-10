@@ -4,8 +4,6 @@
 
 // Module for computing the sha1 hash
 var crypto = require('crypto');
-// Module for synchronously executing a shell command (because child_process.exec is asynchronous which sucks for this application)
-var sh = require('execSync');
 // Module for reading the file containing the secret
 fs = require('fs');
 
