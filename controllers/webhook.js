@@ -5,7 +5,7 @@
 var crypto = require('crypto');
 //var execFile = require('child_process').execFile;
 //var exec = require('child_process').exec;
-var executeSync = require('exec-sync');
+var sh = require('execSync');
 
 
 /**
@@ -37,8 +37,10 @@ exports.webhook = function(req, res) {
         // If the secrets matched and the push was to the master branch, update the local repo and send a '200 OK' response
         if (jsonPayload.ref == "refs/heads/master") {
             console.log("About to execute command");
-            executeSync('cd /var/www && git pull');
-            console.log(gitPull);
+
+            var code = sh.run('cd /var/www && git pull');
+            console.log('return code ' + code);
+
             console.log("shell script executed");
             res.status(200).send("Local repository updated!");
         }
