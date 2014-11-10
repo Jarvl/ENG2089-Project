@@ -50,10 +50,10 @@ exports.webhook = function(req, res) {
     var secret = "";
 
     // Read the file with the secret. The relative directory for fs.readFile is the process.cwd() (The directory where the server file was launched)
-    fs.readFile('secret.txt', 'utf-8', function (err, data) {
+    fs.readFile('secret.txt', function (err, data) {
         if (err) throw err;
-        console.log(data);
-        secret = data;
+        secret = data.toString();
+        console.log(secret);
     });
 
     //stringify json payload for hashing
