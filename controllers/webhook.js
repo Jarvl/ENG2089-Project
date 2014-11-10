@@ -48,7 +48,9 @@ exports.webhook = function(req, res) {
 
     // Define secret (specified on Github) and stringify the payload to use for the SHA1 HMAC Hex Digest function
     var secret = '';
-    fs.readFile('secret.txt', function (err, data) {
+
+    // Read the file with the secret. The relative directory for fs.readFile is the process.cwd() (The directory where the server file was launched)
+    fs.readFile('secret.txt', {encoding: 'utf-8'}, function (err, data) {
         if (err) throw err;
         console.log(data);
         secret = data;
@@ -93,7 +95,5 @@ exports.webhook = function(req, res) {
  */
 
 exports.index = function (req, res) {
-    console.log(process.cwd());
-    //res.status(200).send("This URL is used for webhooks and webhooks only!");
-    res.status(200).send(process.cwd());
+    res.status(200).send("This URL is used for webhooks and webhooks only!");
 };
