@@ -7,7 +7,7 @@ html
     meta(name='description', content='')
     meta(name='csrf-token', content=_csrf)
     meta(name='author', content='Andrew Jarvis')
-    script(src="/js/lib/jquery-2.1.1.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js")
     block head
     title #{title} | The True Story of Hip-Hop
 != css('styles')
@@ -24,3 +24,4 @@ html
         block content
           include partials/footer
       != js('application')
+    block scripts

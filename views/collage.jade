@@ -4,10 +4,41 @@
 extends layout
 
 block head
+   link(rel="stylesheet", src="/css/transitions.css")
    script(src="/js/jquery.collagePlus.min.js")
    script(src="/js/jquery.collageCaption.min.js")
    script(src="/js/jquery.removeWhitespace.min.js")
-   link(rel="stylesheet", src="/css/transitions.css")
+   script.
+      // All images need to be loaded for this plugin to work so
+      // we end up waiting for the whole window to load in this example
+      $(window).load(function () {
+        $(document).ready(function(){
+            collage();
+            $('.Collage').collageCaption();
+        });
+      });
+
+      // Here we apply the actual CollagePlus plugin
+      function collage() {
+         $('.Collage').removeWhitespace().collagePlus(
+            {
+                'fadeSpeed'     : 2000,
+                'targetHeight'  : 200,
+                'effect'        : 'effect-6',
+                'direction'     : 'vertical'
+            });
+      };
+
+      // This is just for the case that the browser window is resized
+      var resizeTimer = null;
+      $(window).bind('resize', function() {
+         // hide all the images until we resize them
+         $('.Collage .Image_Wrapper').css("opacity", 0);
+
+         // set a timer to re-apply the plugin
+         if (resizeTimer) clearTimeout(resizeTimer);
+         resizeTimer = setTimeout(collage, 200);
+      });
 
 block content
    h1 #{title)
@@ -42,15 +73,3 @@ block content
       img(src="/images/covers/madvillian-madvilliany-2004.jpg", width="250", height="250")
       img(src="/images/covers/50cent-getrichordietryin-2003.jpg", width="200", height="200")
       img(src="/images/covers/kidcudi-manonthemoon-2009.jpg", width="150", height="150")
-
-   script.
-      $(document).ready(function () {
-         $('.Collage').collagePlus({
-            // change this to adjust the height of the rows
-            'targetHeight': 200,
-            'allowPartialLastRow': true,
-            // change this to try different effects
-            // valid effects = effect-1 to effect-6
-            'effect': "effect-1"
-         });
-      });
