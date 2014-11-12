@@ -8,6 +8,10 @@ block head
    script(src="/js/jquery.collageCaption.min.js")
    script(src="/js/jquery.removeWhitespace.min.js")
    link(rel="stylesheet", src="/css/transitions.css")
+   script.
+      $(window).load(function () {
+         $('.Collage').collagePlus();
+      });
 
 block content
    h1 #{title)
@@ -42,8 +46,3 @@ block content
       img(src="/images/covers/madvillian-madvilliany-2004.jpg", width="500", height="500")
       img(src="/images/covers/50cent-getrichordietryin-2003.jpg", width="500", height="500")
       img(src="/images/covers/kidcudi-manonthemoon-2009.jpg", width="500", height="500")
-
-   script.
-      $(window).load(function () {
-         $('.Collage').collagePlus();
-      });
