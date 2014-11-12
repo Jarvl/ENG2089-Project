@@ -11,7 +11,7 @@ block content
    h1 #{title)
    hr
 
-   #ri-grid.ri-grid.ri-grid-size-3.ri-shadow
+   #ri-grid.ri-grid.ri-grid-size-3.ri-shadow(style="display:none;")
       ul
          img(class="ri-loading-image", src="/images/loading.gif")
          li
@@ -167,7 +167,7 @@ block scripts
                   onhover: false,
                   // ids of elements that shouldn't change
                   nochange: []
-               });
+               }).show();
             });
          });
       });
