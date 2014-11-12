@@ -9,6 +9,7 @@
 
 exports.index = function(req, res) {
     res.render('collage', {
-        title: 'Album Collage'
+        title: 'Album Collage',
+        noContainer: true
     });
 };
