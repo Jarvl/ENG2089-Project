@@ -4,11 +4,8 @@
 extends layout
 
 block head
-   noscript.
-      link(rel="stylesheet", href="css/fallback.css")
-   <!--[if lt IE 9]>
-      link(rel="stylesheet", href="css/fallback.css")
-   <![endif]-->
+   link(rel="stylesheet", href="/css/fallback.css")
+   link(rel="stylesheet", href="/css/collage.css")
 
 block content
    h1 #{title)
@@ -16,6 +13,7 @@ block content
 
    #ri-grid.ri-grid.ri-grid-size-3.ri-shadow
       ul
+         img(class="ri-loading-image", src="/images/loading.gif")
          li
             a(href="#")
                img(src="/images/covers/atribecalledquest-lowendtheory-1991.jpg", alt="A Tribe Called Quest - Low End Theory (1991)")
@@ -115,30 +113,30 @@ block scripts
             // rows/columns for different screen widths
             // i.e. w768 is for screens smaller than 768 pixels
             w1024           : {
-               rows    : 3,
-               columns : 8
+               rows    : 5,
+               columns : 6
             },
             w768            : {
-               rows    : 3,
-               columns : 7
-            },
-            w480            : {
-               rows    : 3,
+               rows    : 5,
                columns : 5
             },
+            w480            : {
+               rows    : 6,
+               columns : 4
+            },
             w320            : {
-               rows    : 2,
+               rows    : 7,
                columns : 4
             },
             w240            : {
-               rows    : 2,
+               rows    : 7,
                columns : 3
             },
             // step: number of items that are replaced at the same time
             // random || [some number]
             // note: for performance issues, the number should not be > options.maxStep
             step            : 'random',
-            maxStep         : 3,
+            maxStep         : 2,
             // prevent user to click the items
             preventClick    : true,
             // animation type
@@ -152,11 +150,11 @@ block scripts
             // animation speed
             animSpeed       : 500,
             // animation easings
-            animEasingOut   : 'linear',
-            animEasingIn    : 'linear',
+            //animEasingOut   : 'linear',
+            //animEasingIn    : 'linear',
             // the item(s) will be replaced every 3 seconds
             // note: for performance issues, the time "can't" be < 300 ms
-            interval        : 3000,
+            //interval        : 3000,
             // if false the animations will not start
             // use false if onhover is true for example
             slideshow       : true,
@@ -164,5 +162,5 @@ block scripts
             onhover     : false,
             // ids of elements that shouldn't change
             nochange        : []
-                     });
-                  });
+         });
+      });

@@ -16,8 +16,9 @@ html
     include partials/navbar
     include partials/flash
 
-    if noContainer
-      block content
+    if noBox
+      .collage-container
+        block content
     else
       .container
         if intro
