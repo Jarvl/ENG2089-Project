@@ -10,7 +10,7 @@ html
     script(src="/js/lib/jquery-2.1.1.min.js")
     block head
     title #{title} | The True Story of Hip-Hop
-    != css('styles')
+!= css('styles')
   body
     include partials/navbar
     .container
@@ -22,7 +22,5 @@ html
         hr
       .drop-shadow.home-container
         block content
-
-    include partials/footer
-
-    != js('application')
+          include partials/footer
+      != js('application')
