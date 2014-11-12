@@ -74,6 +74,10 @@ exports.webhook = function(req, res) {
             console.log("Is it up to date?" + result.stdout);
             console.log(result.stdout);
 
+            if (result.stdout == "Already up-to-date.") {
+                console.log("I think this is up to date!")
+            }
+
             // Tell Github that everything went peachy
             res.status(200).send("Local repository updated!");
         }
