@@ -71,6 +71,7 @@ exports.webhook = function(req, res) {
             // Execute the shell command
             var result = sh.exec('cd /var/www && git pull');
             console.log('return code ' + result.code);
+            console.log("Is it up to date?" + result.stdout);
             console.log(result.stdout);
 
             // Tell Github that everything went peachy
