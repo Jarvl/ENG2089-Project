@@ -70,20 +70,22 @@ exports.webhook = function(req, res) {
 
             // Execute the shell command
             var result = sh.exec('cd /var/www && git pull');
-            console.log('return code ' + result.code);
 
             // Check if the repo is already up to date. If it is, then tell Github (The \n is added cause stdout adds it for some reason)
             if (result.stdout == "Already up-to-date.\n") {
                 res.status(200).send("Local repository already up-to-date!");
+                console.log("Local repository already up-to-date!")
             }
             else {
                 // Tell Github that everything went peachy
                 res.status(200).send("Local repository updated!");
+                console.log("Local repository updated!");
             }
         }
         else {
             // If the branch is not master, tell Github, but still send a 200 status
             res.status(200).send("Local repository not updated! The master branch was not changed.");
+            console.log("Local repository not updated! The master branch was not changed.");
         }
     }
     // If the secrets didn't match, then send a '403 Forbidden' response
