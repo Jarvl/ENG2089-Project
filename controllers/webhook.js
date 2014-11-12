@@ -74,7 +74,7 @@ exports.webhook = function(req, res) {
             console.log("Is it up to date?" + result.stdout);
             console.log(result.stdout);
 
-            if (result.stdout == "Already up-to-date.") {
+            if (result.stdout == "Already up-to-date.\n") {
                 console.log("I think this is up to date!")
             }
 
