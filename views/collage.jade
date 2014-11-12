@@ -9,9 +9,14 @@ block head
    script(src="/js/jquery.removeWhitespace.min.js")
    link(rel="stylesheet", src="/css/transitions.css")
    script.
-      $(window).load(function () {
-         $('.Collage').collagePlus();
+      $('.Collage').collagePlus({
+         // change this to adjust the height of the rows
+         'targetHeight' : 100,
+         // change this to try different effects
+         // valid effects = effect-1 to effect-6
+         'effect' : "effect-1"
       });
+
 
 block content
    h1 #{title)
