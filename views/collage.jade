@@ -14,7 +14,7 @@ block content
    #ri-grid.ri-grid.ri-grid-size-3.ri-shadow(style="display:none;")
       //- We need more pictures!
       ul
-         img(class="ri-loading-image", src="/images/loading.gif")
+         img(id="loading", class="ri-loading-image", src="/images/loading.gif")
          li
             a(href="#")
                img(src="/images/covers/atribecalledquest-lowendtheory-1991.jpg", alt="A Tribe Called Quest - Low End Theory (1991)")
@@ -202,6 +202,7 @@ block scripts
                   // ids of elements that shouldn't change
                   nochange: []
                });
+               $("img#loading").fadeOut();
                $("div#ri-grid").fadeIn(1500);
             });
          });
