@@ -69,8 +69,9 @@ exports.webhook = function(req, res) {
         if (jsonPayload.ref == "refs/heads/master") {
 
             // Execute the shell command
-            var code = sh.run('cd /var/www && git pull');
-            console.log('return code ' + code);
+            var result = sh.exec('cd /var/www && git pull');
+            console.log('return code ' + result.code);
+            console.log(result.stdout);
 
             // Tell Github that everything went peachy
             res.status(200).send("Local repository updated!");
