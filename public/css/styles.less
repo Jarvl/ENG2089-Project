@@ -92,6 +92,12 @@ blockquote {
   line-height: 1.45;
   position: relative;
   color: #383838;
+  cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+  }
 }
 
 blockquote:before {
@@ -102,13 +108,6 @@ blockquote:before {
   left: -20px;
   top: -20px;
   color: #7a7a7a;
-}
-
-blockquote cite {
-  color: #999999;
-  font-size: 14px;
-  display: block;
-  margin-top: 5px;
 }
 
 blockquote cite:before {
@@ -126,4 +125,20 @@ blockquote cite:before {
 
 p.text-indent {
   text-indent: 40px;
+}
+
+.Collage{
+  /*
+   * Change this to set the spacing of the images in the grid
+   */
+  padding:10px;
+  img {
+    opacity: 0;
+    box-shadow: 0px 3px 4px #dcdcdc;
+    border-radius: 6px;
+    /*
+    * Change this to try different borders
+    */
+    border: 6px solid #FFF;
+  }
 }
