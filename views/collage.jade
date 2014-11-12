@@ -4,127 +4,159 @@
 extends layout
 
 block head
-   link(rel="stylesheet", src="/css/transitions.css")
-   script(src="/js/jquery.collagePlus.min.js")
-   script(src="/js/jquery.collageCaption.min.js")
-   script(src="/js/jquery.removeWhitespace.min.js")
-   script.
-      // All images need to be loaded for this plugin to work so
-      // we end up waiting for the whole window to load in this example
-      $(window).load(function () {
-        $(document).ready(function(){
-            collage();
-            $('.Collage').collageCaption();
-        });
-      });
-
-      // Here we apply the actual CollagePlus plugin
-      function collage() {
-         $('.Collage').removeWhitespace().collagePlus(
-            {
-               'fadeSpeed'     : 2000,
-               'targetHeight'  : 250,
-               'effect'        : 'effect-6',
-               'direction'     : 'vertical',
-            });
-      };
-
-      // This is just for the case that the browser window is resized
-      var resizeTimer = null;
-      $(window).bind('resize', function() {
-         // hide all the images until we resize them
-         $('.Collage .Image_Wrapper').css("opacity", 0);
-
-         // set a timer to re-apply the plugin
-         if (resizeTimer) clearTimeout(resizeTimer);
-         resizeTimer = setTimeout(collage, 200);
-      });
 
 block content
    h1 #{title)
    hr
 
-   .Collage
-      .Image_Wrapper(data-caption="A Tribe Called Quest - Low End Theory (1991)")
-         img(src="/images/covers/atribecalledquest-lowendtheory-1991.jpg")
+   #ri-grid.ri-grid.ri-grid-size-3.ri-shadow
+      ul
+         li
+            a(href="#")
+               img(src="/images/covers/atribecalledquest-lowendtheory-1991.jpg", alt="A Tribe Called Quest - Low End Theory (1991)")
+         li
+            a(href="#")
+               img(src="/images/covers/ti-papertrail-2008.jpg", alt="T.I. - Paper Trail (2008)")
+         li
+            a(href="#")
+               img(src="/images/covers/beastieboys-licensetoill-1986.jpg", alt="Beastie Boys - License to Ill (1986)")
+         li
+            a(href="#")
+               img(src="/images/covers/thenotoriousbig-readytodie-1994.jpg", alt="The Notorious B.I.G. - Ready to Die (1994)")
+         li
+            a(href="#")
+               img(src="/images/covers/rundmc-kingofrock-1985.jpg", alt="Run DMC - King of Rock (1985)")
+         li
+            a(href="#")
+               img(src="/images/covers/drdre-thechronic-1992.jpg", alt="Dr. Dre - The Chronic (1992)")
+         li
+            a(href="#")
+               img(src="/images/covers/scarface-mrscarfaceisback-1991.jpg", alt="Scarface - Mr. Scarface is Back (1991)")
+         li
+            a(href="#")
+               img(src="/images/covers/icecube-deathcertificate-1991.jpg", alt="Ice Cube - Death Certificate (1991)")
+         li
+            a(href="#")
+               img(src="/images/covers/puffdaddy-nowayout-1997.jpg", alt="Puff Daddy & the Family - No Way Out (1997)")
+         li
+            a(href="#")
+               img(src="/images/covers/getoboys-wecantbestopped-1991.jpg", alt="Geto Boys - We Can't be Stopped (1991)")
+         li
+            a(href="#")
+               img(src="/images/covers/outkast-atliens-1996.jpg", alt="Outkast - ATLiens (1996)")
+         li
+            a(href="#")
+               img(src="/images/covers/jay-z-reasonabledoubt-1996.jpg", alt="Jay-Z - Reasonable Doubt (1996)")
+         li
+            a(href="#")
+               img(src="/images/covers/publicenemy-ittakesanationofmillionstoholdusback-1988.jpg", alt="Public Enemy - It Takes a Nation of a Million to Hold us Back (1988)")
+         li
+            a(href="#")
+               img(src="/images/covers/wutangclan-36chambers-1993.jpg", alt="Wu-tang Clan - Enter the Wu-tang: 36 Chambers (1993)")
+         li
+            a(href="#")
+               img(src="/images/covers/kanyewest-graduation-2007.jpg", alt="Kanye West - Graduation (2007)")
+         li
+            a(href="#")
+               img(src="/images/covers/atribecalledquest-midnightmarauders-1993.jpg", alt="A Tribe Called Quest - Midnight Marauders (1993)")
+         li
+            a(href="#")
+               img(src="/images/covers/kingtee-actafool-1988.jpg", alt="King Tee - Act a Fool (1988)")
+         li
+            a(href="#")
+               img(src="/images/covers/drake-takecare-2011.jpg", alt="Drake - Take Care (2011)")
+         li
+            a(href="#")
+               img(src="/images/covers/oldirtybastard-returntothe36chambers-1995.jpg", alt="Ol' Dirty Bastard - Return to the 36 Chambers: The Dirty Version (1995)")
+         li
+            a(href="#")
+               img(src="/images/covers/pharcyde-bizarrerideiithepharcyde-1992.jpg", alt="Pharcyde - Bizarre Ride II the Pharcyde (1992)")
+         li
+            a(href="#")
+               img(src="/images/covers/schoollyd-schoollyd-1986.jpg", alt="Schoolly D - Schoolly D (1986)")
+         li
+            a(href="#")
+               img(src="/images/covers/nas-illmatic-1994.jpg", alt="Nas - Illmatic (1994)")
+         li
+            a(href="#")
+               img(src="/images/covers/lilwayne-thecarteriii-2008.jpg", alt="Lil Wayne - The Carter III (2008)")
+         li
+            a(href="#")
+               img(src="/images/covers/kmd-blackbastards-1994.jpg", alt="KMD - Black Bastards (1994)")
+         li
+            a(href="#")
+               img(src="/images/covers/epmd-businessasusual-1992.jpg", alt="EPMD - Business as Usual (1992)")
+         li
+            a(href="#")
+               img(src="/images/covers/madvillian-madvilliany-2004.jpg", alt="Madvillian - Madvilliany (2004)")
+         li
+            a(href="#")
+               img(src="/images/covers/50cent-getrichordietryin-2003.jpg", alt="50 Cent - Get Rich or Die Tryin' (2003)")
+         li
+            a(href="#")
+               img(src="/images/covers/kidcudi-manonthemoon-2009.jpg", alt="Kid Cudi - Man on the Moon: The End of Day (2009)")
 
-      .Image_Wrapper(data-caption="T.I. - Paper Trail (2008)")
-         img(src="/images/covers/ti-papertrail-2008.jpg")
-
-      .Image_Wrapper(data-caption="Beastie Boys - License to Ill (1986)")
-         img(src="/images/covers/beastieboys-licensetoill-1986.jpg")
-
-      .Image_Wrapper(data-caption="The Notorious B.I.G. - Ready to Die (1994)")
-         img(src="/images/covers/thenotoriousbig-readytodie-1994.jpg")
-
-      .Image_Wrapper(data-caption="Run DMC - King of Rock (1985)")
-         img(src="/images/covers/rundmc-kingofrock-1985.jpg")
-
-      .Image_Wrapper(data-caption="Dr. Dre - The Chronic (1992)")
-         img(src="/images/covers/drdre-thechronic-1992.jpg")
-
-      .Image_Wrapper(data-caption="Scarface - Mr. Scarface is Back (1991)")
-         img(src="/images/covers/scarface-mrscarfaceisback-1991.jpg")
-
-      .Image_Wrapper(data-caption="Ice Cube - Death Certificate (1991)")
-         img(src="/images/covers/icecube-deathcertificate-1991.jpg")
-
-      .Image_Wrapper(data-caption="Puff Daddy & the Family - No Way Out (1997)")
-         img(src="/images/covers/puffdaddy-nowayout-1997.jpg")
-
-      .Image_Wrapper(data-caption="Geto Boys - We Can't be Stopped (1991)")
-         img(src="/images/covers/getoboys-wecantbestopped-1991.jpg")
-
-      .Image_Wrapper(data-caption="Outkast - ATLiens (1996)")
-         img(src="/images/covers/outkast-atliens-1996.jpg")
-
-      .Image_Wrapper(data-caption="jay-Z - Reasonable Doubt (1996)")
-         img(src="/images/covers/jay-z-reasonabledoubt-1996.jpg")
-
-      .Image_Wrapper(data-caption="Public Enemy - It Takes a Nation of a Million to Hold us Back (1988)")
-         img(src="/images/covers/publicenemy-ittakesanationofmillionstoholdusback-1988.jpg")
-
-      .Image_Wrapper(data-caption="Wu-tang Clan - Enter the Wu-tang: 36 Chambers (1993)")
-         img(src="/images/covers/wutangclan-36chambers-1993.jpg")
-
-      .Image_Wrapper(data-caption="Kanye West - Graduation (2007)")
-         img(src="/images/covers/kanyewest-graduation-2007.jpg")
-
-      .Image_Wrapper(data-caption="A Tribe Called Quest - Midnight Marauders (1993)")
-         img(src="/images/covers/atribecalledquest-midnightmarauders-1993.jpg")
-
-      .Image_Wrapper(data-caption="King Tee - Act a Fool (1988)")
-         img(src="/images/covers/kingtee-actafool-1988.jpg")
-
-      .Image_Wrapper(data-caption="Drake - Take Care (2011)")
-         img(src="/images/covers/drake-takecare-2011.jpg")
-
-      .Image_Wrapper(data-caption="Ol' Dirty Bastard - Return to the 36 Chambers: The Dirty Version (1995)")
-         img(src="/images/covers/oldirtybastard-returntothe36chambers-1995.jpg")
-
-      .Image_Wrapper(data-caption="Pharcyde - Bizarre Ride II the Pharcyde (1992)")
-         img(src="/images/covers/pharcyde-bizarrerideiithepharcyde-1992.jpg")
-
-      .Image_Wrapper(data-caption="Schoolly D - Schoolly D (1986)")
-         img(src="/images/covers/schoollyd-schoollyd-1986.jpg")
-
-      .Image_Wrapper(data-caption="Nas - Illmatic (1994)")
-         img(src="/images/covers/nas-illmatic-1994.jpg")
-
-      .Image_Wrapper(data-caption="Lil Wayne - The Carter III (2008)")
-         img(src="/images/covers/lilwayne-thecarteriii-2008.jpg")
-
-      .Image_Wrapper(data-caption="KMD - Black Bastards (1994)")
-         img(src="/images/covers/kmd-blackbastards-1994.jpg")
-
-      .Image_Wrapper(data-caption="EPMD - Business as Usual (1992)")
-         img(src="/images/covers/epmd-businessasusual-1992.jpg")
-
-      .Image_Wrapper(data-caption="Madvillian - Madvilliany (2004)")
-         img(src="/images/covers/madvillian-madvilliany-2004.jpg")
-
-      .Image_Wrapper(data-caption="50 Cent - Get Rich or Die Tryin' (2003)")
-         img(src="/images/covers/50cent-getrichordietryin-2003.jpg")
-
-      .Image_Wrapper(data-caption="Kid Cudi - Man on the Moon: The End of Day (2009)")
-         img(src="/images/covers/kidcudi-manonthemoon-2009.jpg")
+block scripts
+   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+   script(src="/js/jquery.gridrotator.js")
+   script.
+      $(function () {
+         $('#ri-grid').gridrotator({
+            // number of rows
+            rows            : 4,
+            // number of columns
+            columns         : 8,
+            // rows/columns for different screen widths
+            // i.e. w768 is for screens smaller than 768 pixels
+            w1024           : {
+               rows    : 3,
+               columns : 8
+            },
+            w768            : {
+               rows    : 3,
+               columns : 7
+            },
+            w480            : {
+               rows    : 3,
+               columns : 5
+            },
+            w320            : {
+               rows    : 2,
+               columns : 4
+            },
+            w240            : {
+               rows    : 2,
+               columns : 3
+            },
+            // step: number of items that are replaced at the same time
+            // random || [some number]
+            // note: for performance issues, the number should not be > options.maxStep
+            step            : 'random',
+            maxStep         : 3,
+            // prevent user to click the items
+            preventClick    : true,
+            // animation type
+            // showHide || fadeInOut || slideLeft ||
+            // slideRight || slideTop || slideBottom ||
+            // rotateLeft || rotateRight || rotateTop ||
+            // rotateBottom || scale || rotate3d ||
+            // rotateLeftScale || rotateRightScale ||
+            // rotateTopScale || rotateBottomScale || random
+            animType        : 'random',
+            // animation speed
+            animSpeed       : 500,
+            // animation easings
+            animEasingOut   : 'linear',
+            animEasingIn    : 'linear',
+            // the item(s) will be replaced every 3 seconds
+            // note: for performance issues, the time "can't" be < 300 ms
+            interval        : 3000,
+            // if false the animations will not start
+            // use false if onhover is true for example
+            slideshow       : true,
+            // if true the items will switch when hovered
+            onhover     : false,
+            // ids of elements that shouldn't change
+            nochange        : []
+                     });
+                  });
