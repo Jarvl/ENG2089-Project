@@ -44,13 +44,11 @@ block content
       img(src="/images/covers/kidcudi-manonthemoon-2009.jpg", width="150", height="150")
 
    script.
-      $(window).load(function () {
-         $('.Collage').collagePlus({
-            // change this to adjust the height of the rows
-            'targetHeight': 200,
-            'allowPartialLastRow': true,
-            // change this to try different effects
-            // valid effects = effect-1 to effect-6
-            'effect': "effect-1"
-         });
+      $('.Collage').collagePlus({
+         // change this to adjust the height of the rows
+         'targetHeight': 200,
+         'allowPartialLastRow' : true,
+         // change this to try different effects
+         // valid effects = effect-1 to effect-6
+         'effect': "effect-1"
       });
