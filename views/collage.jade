@@ -138,9 +138,9 @@ block content
                img(src="/images/covers/kidcudi-manonthemoon2-2010.jpg", alt="Kid Cudi - Man on the Moon II (2010)")
 
 
-   button#showCitations.btn.btn-default Show Citations
+   button#showCitations.btn.btn-default(style='display:none;') Show Citations
 
-   #citations.container
+   #citations.container(style='display:none;')
       .col-md-4
          cite
             | "A Tribe Called Quest - Low End Theory (1991)"
@@ -232,10 +232,11 @@ block scripts
    script(src="/js/modernizr.custom.26633.js")
    script(src="/js/jquery.gridrotator.js")
    script.
-      $("#citations").hide()
-
       $(window).load(function () {
          $(document).ready(function () {
+
+            $("#showCitations").show();
+
             $(function () {
                $('#ri-grid').gridrotator({
                   // number of rows (ideally 4)
@@ -297,19 +298,18 @@ block scripts
                });
                $("img#loading").hide();
                $("div#ri-grid").fadeIn(1500);
-            });
 
-            $("#showCitations").click(function () {
+               $("#showCitations").click(function () {
+                  if ($("#citations").is(":hidden")) {
+                     $("#citations").fadeIn();
+                     $("#citations").text("Hide Citations");
+                  }
+                  else if ($("#citations").is(":visible")) {
+                     $("#citations").fadeOut();
+                     $("#citations").text("Show Citations");
+                  }
+               });
 
-               if ( $("#citations").is(":hidden") ) {
-                  $("#citations").fadeIn();
-                  $("#citations").text("Hide Citations");
-               }
-
-               else if ( $("#citations").is(":visible") ) {
-                  $("#citations").fadeOut();
-                  $("#citations").text("Show Citations");
-               }
             });
          });
       });
