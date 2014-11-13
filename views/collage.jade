@@ -303,10 +303,12 @@ block scripts
 
                if ( $("#citations").is(":hidden") ) {
                   $("#citations").fadeIn();
+                  $("#citations").text("Hide Citations");
                }
 
                else if ( $("#citations").is(":visible") ) {
                   $("#citations").fadeOut();
+                  $("#citations").text("Show Citations");
                }
             });
          });
