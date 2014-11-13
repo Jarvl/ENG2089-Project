@@ -138,7 +138,7 @@ block content
                img(src="/images/covers/kidcudi-manonthemoon2-2010.jpg", alt="Kid Cudi - Man on the Moon II (2010)")
 
 
-   button#showCitations.btn.btn-default(style='display:none;') Show Citations
+   button#showCitations.btn.btn-default(style='display:none;') Show Citations ⇒
 
    #citations.container(style='display:none;')
       .col-md-4
@@ -302,11 +302,11 @@ block scripts
                $("#showCitations").click(function () {
                   if ($("#citations").is(":hidden")) {
                      $("#citations").fadeIn();
-                     $("#showCitations").text("Hide Citations");
+                     $("#showCitations").text("Hide Citations ⇐");
                   }
                   else if ($("#citations").is(":visible")) {
                      $("#citations").fadeOut();
-                     $("#showCitations").text("Show Citations");
+                     $("#showCitations").text("Show Citations ⇒");
                   }
                });
 
