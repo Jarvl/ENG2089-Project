@@ -301,11 +301,11 @@ block scripts
 
             $("#showCitations").click(function () {
 
-               if ($("#citations:hidden")) {
+               if ( $("#citations").is(":hidden") ) {
                   $("#citations").fadeIn();
                }
 
-               else if ($("#citations:visible")) {
+               else if ( $("#citations").is(":visible") ) {
                   $("#citations").fadeOut();
                }
             });
