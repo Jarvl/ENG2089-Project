@@ -160,3 +160,7 @@ a {
 .none {
     display: none;
 }
+
+.artwork-citations cite {
+    text-align: center;
+}
