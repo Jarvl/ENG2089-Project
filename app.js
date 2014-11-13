@@ -36,6 +36,7 @@ var deathsController = require('./controllers/deaths');
 var ruggedController = require('./controllers/rugged');
 var theftorhomageController = require('./controllers/theftorhomage');
 var collageController = require('./controllers/collage');
+var chartController = require('./controllers/chart');
 
 
 /**
@@ -126,6 +127,7 @@ app.get('/deaths', deathsController.index);
 app.get('/rugged', ruggedController.index);
 app.get('/theftorhomage', theftorhomageController.index);
 app.get('/collage', collageController.index);
+app.get('/chart', chartController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
