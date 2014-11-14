@@ -73,11 +73,27 @@ block head
             legend: {
                enabled: false
             },
+            series: [
+               {
+                  name: 'Year 1800',
+                  data: [6, 8, 5]
+               },
+               {
+                  name: 'Year 1900',
+                  data: [4, 2, 3]
+               },
+               {
+                  name: 'Year 2008',
+                  data: [9, 4, 6]
+               }
+            ]
+            /*
             series: [{
                name: 'Reading',
                //colorByPoint: true,
                data: [8, 7, 9]
             }]
+            */
          });
          // Add mouse events for rotation
          $(chart.container).bind('mousedown.hc touchstart.hc', function (e) {
