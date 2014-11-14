@@ -89,15 +89,16 @@ block head
                   data: [[600000, 25000, 30]]
                }
             ]
-            /*
-            series: [{
-               name: 'Reading',
-               //colorByPoint: true,
-               data: [8, 7, 9]
-            }]
-            */
          });
-         // Add mouse events for rotation
+         tooltip: {
+            formatter: function () {
+               return ' ' +
+                       'Locked: ' + this.point.x + '<br />' +
+                       'Unlocked: ' + this.point.y + '<br />' +
+                       'Potential: ' + this.point.z;
+            }
+         }
+            // Add mouse events for rotation
          $(chart.container).bind('mousedown.hc touchstart.hc', function (e) {
             e = chart.pointer.normalize(e);
             var posX = e.pageX,
