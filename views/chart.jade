@@ -4,20 +4,7 @@
 extends layout
 
 block head
-
-block content
-   h1 #{title}
-   hr
-   //- Use the 3d three point scatter plot.
-      x = Unique words
-      y = net worth
-      z = years in the game
-
-   #chartContainer(style="height: 400px")
-
-
-block scripts
-   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
    script(src="/js/highcharts/js/highcharts.js")
    script(src="/js/highcharts/js/highcharts-3d.js")
    script(src="/js/highcharts/js/modules/exporting.js")
@@ -120,3 +107,16 @@ block scripts
             });
          });
       });
+
+block content
+   h1 #{title}
+   hr
+   //- Use the 3d three point scatter plot.
+      x = Unique words
+      y = net worth
+      z = years in the game
+
+   #chartContainer(style="height: 400px")
+
+
+block scripts
