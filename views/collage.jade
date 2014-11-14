@@ -316,8 +316,6 @@ block scripts
       $(window).load(function () {
          $(document).ready(function () {
 
-            $("#showCitations").show();
-
             $(function () {
                $('#ri-grid').gridrotator({
                   // number of rows (ideally 4)
@@ -380,6 +378,7 @@ block scripts
                $("img#loading").hide();
                $("div#ri-grid").fadeIn(1500);
 
+               $("#showCitations").show();
                $("#showCitations").click(function () {
                   if ($("#citations").is(":hidden")) {
                      $("#citations").fadeIn();
