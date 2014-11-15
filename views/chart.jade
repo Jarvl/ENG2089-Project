@@ -24,6 +24,7 @@ block head
                ]
             };
          });
+
          // Set up the chart
          var chart = new Highcharts.Chart({
             chart: {
@@ -75,30 +76,30 @@ block head
             legend: {
                enabled: false
             },
-            series: [
-               {
-                  name: 'The Notorious B.I.G.',
-                  data: [[750000, 30000, 15]]
-               },
-               {
-                  name: 'Nas',
-                  data: [[500000, 20000, 20]]
-               },
-               {
-                  name: 'Tupac',
-                  data: [[600000, 25000, 30]]
-               }
-            ]
+            series:
+
+               [
+                  {
+                     name: 'The Notorious B.I.G.',
+                     data: [[750000, 30000, 15]],
+                     tooltip: {
+                        crosshairs: true,
+                        headerFormat: '<b>{series.name}</b>',
+                        pointFormat: '<br /><b>Net Worth : {point.x}</b><br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Nas',
+                     data: [[500000, 20000, 20]]
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]]
+                  }
+               ]
          });
-         tooltip: {
-            formatter: function () {
-               return ' ' +
-                       'Locked: ' + this.point.x + '<br />' +
-                       'Unlocked: ' + this.point.y + '<br />' +
-                       'Potential: ' + this.point.z;
-            }
-         }
-            // Add mouse events for rotation
+
+         // Add mouse events for rotation
          $(chart.container).bind('mousedown.hc touchstart.hc', function (e) {
             e = chart.pointer.normalize(e);
             var posX = e.pageX,
