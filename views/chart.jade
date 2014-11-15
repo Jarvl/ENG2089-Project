@@ -56,9 +56,8 @@ block head
                   height: 35000,
                   depth: 50,
                   tooltip: {
-                     crosshairs: true,
-                     headerFormat: '<b>{series.name}</b>',
-                     pointFormat: '<br /><b>Net Worth : {point.x}</b><br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     headerFormat: '<b>{series.name}</b><br />',
+                     pointFormat: '<b>Net Worth : {point.x}</b><br/>Lyricism : {point.y}<br/>Experience : {point.z}'
                   }
                }
             },
@@ -82,19 +81,33 @@ block head
                enabled: false
             },
             series:
-
                [
                   {
                      name: 'The Notorious B.I.G.',
                      data: [[750000, 30000, 15]]
+                     tooltip: {
+                        crosshairs: true,
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: '<b>Net Worth : {point.x}</b><br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
                   },
                   {
                      name: 'Nas',
                      data: [[500000, 20000, 20]]
+                     tooltip: {
+                        crosshairs: true,
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: '<b>Net Worth : {point.x}</b><br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
                   },
                   {
                      name: 'Tupac',
                      data: [[600000, 25000, 30]]
+                     tooltip: {
+                        crosshairs: true,
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: '<b>Net Worth : {point.x}</b><br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
                   }
                ]
          });
