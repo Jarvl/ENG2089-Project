@@ -21,8 +21,9 @@ html
     else
       include partials/introduction
 
-      .container.drop-shadow.home-container
-        block content
+      .container
+        .drop-shadow.home-container
+          block content
 
     include partials/footer
     != js('application')
