@@ -13,7 +13,7 @@ block content
    br
    br
 
-   h2 Tupac
+   h2 Tupac Shakur
    p.text-indent 2Pac was born as Tupac Shakur on June 16, 1971 in Harlem, New York. The death of Tupac is by far the most tragic death the hip-hop community has ever seen. In fact, his death in 1996 is still talked about and remains a mystery to this day. As a rapper, Tupac has been considered the most influential rapper of all time as well as one of the greatest artists of all time. Each of his songs had more heart and imagery than any other modern rapper of today. With his talent and fame, it's pretty obvious that someone out there would really want him dead.
 
    hr
@@ -22,3 +22,34 @@ block content
 
    h2 Jam Master Jay
    p.text-indent
+
+   br
+   br
+
+   .container
+      button#showCitations.btn.btn-default(style='display:none;') Show Citations ⇒
+      #citations(style='display:none;')
+         .col-md-4
+            h4.text-center Biggie Smalls
+            a(href='http://www.biography.com/people/biggie-smalls-20866735', target='_blank') Biography
+         .col-md-4
+            h4.text-center Tupac Shakur
+            a(href='http://www.biography.com/people/tupac-shakur-206528', target='_blank') Biography
+         .col-md-4
+            h4.text-center Jam Master Jay
+            a(href='http://www.rollingstone.com/music/artists/jam-master-jay/biography', target='_blank') Biography
+
+
+block scripts
+   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+   script.
+      $("#showCitations").show().click(function () {
+         if ($("#citations").is(":hidden")) {
+            $("#citations").fadeIn();
+            $("#showCitations").text("Hide Citations ⇐");
+         }
+         else if ($("#citations").is(":visible")) {
+            $("#citations").fadeOut();
+            $("#showCitations").text("Show Citations ⇒");
+         }
+      });
