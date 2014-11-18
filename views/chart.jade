@@ -61,16 +61,17 @@ block head
                   }
                }
             },
+
+            xAxis: {
+               min: -50000000,
+               max: 100000000,
+               title: 'Net Worth',
+               gridLineWidth: 1
+            },
             yAxis: {
                min: 0,
                max: 35000,
                title: 'Unique Words'
-            },
-            xAxis: {
-               min: 0,
-               max: 1000000,
-               title: 'Net Worth',
-               gridLineWidth: 1
             },
             zAxis: {
                min: 0,
@@ -80,19 +81,111 @@ block head
             legend: {
                enabled: false
             },
+
             series:
                [
+                 /*
                   {
                      name: 'The Notorious B.I.G.',
-                     data: [[750000, 30000, 15]],
+                     data: [[160000000, 30000, 5]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  */
+                  {
+                     name: 'Nas',
+                     data: [[500000, 5096, 20]],
                      tooltip: {
                         headerFormat: '<b>{series.name}</b><br />',
                         pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
                      }
                   },
                   {
-                     name: 'Nas',
-                     data: [[500000, 20000, 20]],
+                     name: 'Wu-tang Clan',
+                     data: [[20000000, 5895, 22]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'DMX',
+                     data: [[600000, 3214, 26]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Drake',
+                     data: [[55000000, 3522, 13]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                       /*
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
+                     tooltip: {
+                        headerFormat: '<b>{series.name}</b><br />',
+                        pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
+                     }
+                  },
+                  {
+                     name: 'Tupac',
+                     data: [[600000, 25000, 30]],
                      tooltip: {
                         headerFormat: '<b>{series.name}</b><br />',
                         pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
@@ -106,6 +199,7 @@ block head
                         pointFormat: 'Net Worth : {point.x}<br/>Lyricism : {point.y}<br/>Experience : {point.z}'
                      }
                   }
+                  */
                ]
          });
 
