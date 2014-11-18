@@ -19,16 +19,10 @@ html
       .collage-container
         block content
     else
-      .container
-        if intro
-          .jumbotron.jumbotron-inner-shadow
-            h1 Introduction
-            p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-          hr
+      include partials/introduction
 
         .drop-shadow.home-container
           block content
-
 
     include partials/footer
     != js('application')
