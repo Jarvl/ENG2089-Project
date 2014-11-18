@@ -48,7 +48,7 @@ block head
                text: 'Lyrics, Money, and Wisdom'
             },
             subtitle: {
-               text: "A comparison of rapper's lyricism, net worth, and experience"
+               text: "A view of rappers' lyricism, net worth, and experience in one chart"
             },
             plotOptions: {
                scatter: {
@@ -76,7 +76,7 @@ block head
             zAxis: {
                min: 0,
                max: 40,
-               title: 'Years in the game'
+               title: 'Years active'
             },
             legend: {
                enabled: false
@@ -247,6 +247,33 @@ block content
       z = years in the game
 
    #chartContainer(style="height: 400px")
+   .container
+      button#showCitations.btn.btn-default(style='display:none;') Show Citations ⇒
+      #citations(style='display:none;')
+         .col-md-4
+            p
+               | Unique word count of all rappers taken from
+               a(href='http://rappers.mdaniels.com.s3-website-us-east-1.amazonaws.com/', target='_blank')  this study.
+         .col-md-4
+            p
+               | Net worth of all rappers taken from
+               a(href='http://www.celebritynetworth.com/', target='_blank')  this website.
+         .col-md-4
+            p
+               | Years active of all rappers taken from
+               a(href='https://www.wikipedia.org/', target='_blank')  this website.
 
 
 block scripts
+   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+   script.
+      $("#showCitations").show().click(function () {
+         if ($("#citations").is(":hidden")) {
+            $("#citations").fadeIn();
+            $("#showCitations").text("Hide Citations ⇐");
+         }
+         else if ($("#citations").is(":visible")) {
+            $("#citations").fadeOut();
+            $("#showCitations").text("Show Citations ⇒");
+         }
+      });

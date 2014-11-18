@@ -375,8 +375,7 @@ block scripts
                $("img#loading").hide();
                $("div#ri-grid").fadeIn(1500);
 
-               $("#showCitations").show();
-               $("#showCitations").click(function () {
+               $("#showCitations").show().click(function () {
                   if ($("#citations").is(":hidden")) {
                      $("#citations").fadeIn();
                      $("#showCitations").text("Hide Citations ⇐");
