@@ -321,10 +321,21 @@ block head
 block content
    h1 #{title}
    hr
-   //- Use the 3d three point scatter plot.
-      x = Unique words
-      y = net worth
-      z = years in the game
+   br
+   h3 A few notes for you...
+   p This chart probably makes no sense right now, so let me explain a few things first:
+   ul
+      li The axes are labeled as follows:
+         li x-axis - Net worth of the rapper
+         li y-axis - Unique words of the rapper
+         li z-axis - Year active of the rapper
+      li
+         | Another important thing to note is that "unique words" are taken from a study referenced at the bottom (after clicking the "Show Citations" button).
+         | The person who conducted the study took the first 35,000 words of numerous rappers and calculated the unique words of each rapper. So when looking at
+         | a rapper's unique words, keep in mind that they are based off of the first 35,000 words that rapper has rhymed.
+      li The chart is also interactive (which is really cool). To rotate the chart, hover the mouse over the chart, click and hold, and drag appropriately.
+      li To learn more about a point on the graph, hover over the point with your cursor. The tooltip will display the rapper's name, net worth, unique words, and years active.
+      li Lastly, draw your own conclusions! There are a lot of variables that could make a rapper successful, and this chart is just the beginning when it comes to putting it all together.
 
    #chartContainer(style="height: 500px;")
    .container
