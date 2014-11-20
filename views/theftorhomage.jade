@@ -81,4 +81,23 @@ block content
 
    hr(align="center", width="83%", height="2px")
    br
-   br
+
+   .container
+      button#showCitations.btn.btn-default(style='display:none;') Show Citations ⇒
+      #citations(style='display:none;')
+         p.text-center All lyrics taken from <a href='http://rap.genius.com/' target='_blank'>Rap Genius</a>
+
+
+block scripts
+   script(src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js")
+   script.
+      $("#showCitations").show().click(function () {
+         if ($("#citations").is(":hidden")) {
+            $("#citations").fadeIn();
+            $("#showCitations").text("Hide Citations ⇐");
+         }
+         else if ($("#citations").is(":visible")) {
+            $("#citations").fadeOut();
+            $("#showCitations").text("Show Citations ⇒");
+         }
+      });
