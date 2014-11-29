@@ -37,7 +37,7 @@ var ruggedController = require('./controllers/rugged');
 var theftorhomageController = require('./controllers/theftorhomage');
 var collageController = require('./controllers/collage');
 var chartController = require('./controllers/chart');
-var badrapController = require('/controllers/badrap');
+var badrapController = require('./controllers/badrap');
 
 
 /**
