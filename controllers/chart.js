@@ -6,7 +6,7 @@
 
 /**
  * GET /chart
- * Home page.
+ * Lyrics, Money, and Wisdom
  */
 
 //lr = new LineByLineReader('big_file.txt');

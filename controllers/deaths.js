@@ -1,6 +1,6 @@
 /**
  * GET /deaths
- * Home page.
+ * Three Tragic Deaths
  */
 
 exports.index = function(req, res) {

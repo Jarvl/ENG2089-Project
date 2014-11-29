@@ -4,7 +4,7 @@
 
 /**
  * GET /collage
- * Home page.
+ * Album Collage
  */
 
 exports.index = function(req, res) {

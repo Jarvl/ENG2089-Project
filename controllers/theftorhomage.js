@@ -3,7 +3,7 @@
  */
 /**
  * GET /theftorhomage
- * Home page.
+ * Theft or Homage?
  */
 
 exports.index = function(req, res) {
